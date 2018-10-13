@@ -37,7 +37,7 @@
 		\begin{itemize}
 			\item collinearity of inputs
 			\item poor performance in coastal
-			\item maximum likelihood estimation approach \rightarrow increased odds of overfitting in particular in the current state of scant field data compared to remote sensing data
+			\item maximum likelihood estimation approach $\rightarrow$ increased odds of overfitting (lack of in-situ data vailability  compared to satellite data makes it worse)
 		\end{itemize}
 	\end{itemize}
 	\subsection{Proposed framework}
@@ -62,11 +62,53 @@
 				\item code available via github
 				\item data available via osf
 			\end{itemize}
+			
+%----------------- END INTRODUCTION --------------------------
 
 \section{Methods}
-	\subsection{Model Development}		
-	\
 
+	\subsection{Model Development}		
+		\subsubsection{Bayesian Linear Regression}
+			\begin{itemize}
+				\item Order 1 regression for interpretable coefficients
+				\item no interaction terms
+				\item regularized horseshoe prior for feature selection
+			\end{itemize}
+		\subsubsection{Bayesian Linear Regression with Interaction Terms}
+			\begin{itemize}
+				\item generation of 1st order interaction terms
+				\item allowing for both strong and weak heredity
+			\end{itemize}
+		\subsubsection{Bayesian Neural Network}
+			\begin{itemize}
+				\item Specific hierarchical structure for ARD
+				\item HL1 4 NN with elu activation
+			\end{itemize}
+		\subsubsection{Bayesian OC4 version as Baseline}
+	
+	\subsection{Prior Predictive Checks}
+	
+	\subsection{Data Acquisition/Exploration/Transformation}
+	
+	\subsection{Model Fitting}
+	
+	\subsection{Marginal Posterior of Coefficients $\rightarrow$ Feature Relevance Determination}	
+	
+	\subsection{Posterior Predictive Checks}
+	
+	\subsection{Model Comparison Through Posterior Predictive Checks}
+	
+%----------------- END METHODS --------------------------
+
+\section{Results}
+
+%----------------- END RESULTS --------------------------
+
+
+%----------------- END DISCUSSION --------------------------
+
+
+	
 \end{document}
 			
 		%	\begin{figure}[H]
