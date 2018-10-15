@@ -6,3 +6,7 @@ BayesOC4\.toc
 *.gz
 *.toc
 *.aux
+
+\.ipynb_checkpoints/
+
+pickleJar/
