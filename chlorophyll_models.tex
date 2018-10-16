@@ -14,7 +14,7 @@
 \graphicspath{{./FigJar/}}
 \begin{document}
 \author{Erdem M. Karaköylü}
-\title{A Principled Approach to Developing Chlorophyll Prediction Models for Remote Sensing}
+\title{A Principled Approach to Developing Chlorophyll Models for Remote Sensing}
 \date{\today}
 \maketitle
 \tableofcontents
@@ -23,12 +23,21 @@
 \newcommand{\reddash}{\raisebox{2pt}{\tikz{\draw[-,red,dashed,line width=1.2pt](0,0) -- (5mm,0);}}}
 \newcommand{\blkdash}{\raisebox{2pt}{\tikz{\draw[-,black,dashed,line width=1.2pt](0,0) -- (5mm,0);}}}
 \newcommand{\blksold}{\raisebox{2pt}{\tikz{\draw[-,black,solid,line width=1.2pt](0,0) -- (5mm,0);}}}
+\section{Abstract}
+
+\newpage
 
 \section{Introduction}
 	\subsection{Background}
 		\begin{itemize}
 		\item Necessity for estimating chlorophyll
-		\item State of current chlorophyll algorithms
+		\item Opportunities afforded by chlorophyll estimation through remote sensing
+		\item State of current chlorophyll algorithms for remote sensing
+		\begin{itemize}
+		    \item OC4 for SeaWiFS
+		    \item Hu \& Franz 2012
+		    \item Gholizadeh et al (2015?)
+		\end{itemize}
 		\item Basic empirical form
 		\begin{align}
 		log_{10}\left(chlor_a\right) = a_0 + \sum_{i=1}^ja_ilog_{10}\left(\frac{max\left(Rrs	\left(\lambda_{blue}\right)\right)}{Rrs\left(\lambda_{green}\right)}\right)
@@ -37,32 +46,30 @@
 		\begin{itemize}
 			\item collinearity of inputs
 			\item poor performance in coastal
-			\item maximum likelihood estimation approach $\rightarrow$ increased odds of overfitting (lack of in-situ data vailability  compared to satellite data makes it worse)
+			\item maximum likelihood estimation approach $\rightarrow$ risk of overfitting (lack of in-situ data vailability  compared to satellite data makes it worse)
 		\end{itemize}
 	\end{itemize}
+	
 	\subsection{Proposed framework}
-		\subsubsection{Basis reduction via PCA}
-		\begin{itemize}
-			\item PCA of Rrs to reduce overlap of information between predictor variables
-		\end{itemize}
-		\subsubsection{Bayesian framework for chlorophyll estimation from remote sensing data}
-			\begin{itemize}
-				\item transparent construction of models with explicit formulation of assumptions,
-				\item assumptions/background information codified as priors,
-				\item feasibility of priors verifiable before data collection via prior predictive checks
-				\item built-in structure for selecting relevant features,
-				\item posterior distribution as rich information structure from which to estimate parameter uncertainty as well as output prediction uncertainty,
-				\item predictive ability of model assessed via posterior predictive checks
-				\item multiple models encouraged by bayesian workflow,
-				\item evaluation/comparison between models using both information about model complexity and posterior distribution (WAIC),
-			\end{itemize}
-		\subsubsection{Reproducibility}
-			\begin{itemize}
-				\item iterative process of bayesian framework relies on reproducibility for progress
-				\item code available via github
-				\item data available via osf
-			\end{itemize}
+	    Here, I use  Bayesian regression models to predict chlorophyll concentration from apparent optical properties. There are a number of advantages for adopting this approach. The first of these is a problem agnostic set of steps detailed in the methods section. A second advantage is that model construction is transparent and assumptions are laid bare. This makes any model developed with this framework easily, and constructively, criticizable. A positive spillover of this is that the process requires that the model code be made available for model criticism to occur; i.e. the study in question must be reproducible to be effective. Another attractive feature of the Bayesian framework is that rather than point predictions, the output of the Bayesian model is the posterior distribution. The posterior distibution is a rich construct that can be used to develop insight in the process of interest, uncertainties around predictions, and a means to rank model performance. Finally, Bayesian regression models are inherently regularized through the stipulated priors. This has a 'calming' effect on the model, which is less likely to overfit an inappropriately scant data set; a common problem in bio-optical model development for marine remote sensing. 
+
+
+Succintly, this approach ensures:
+	\begin{itemize}
+		\item transparent construction of models with explicit formulation of assumptions,
+		\item assumptions/background information codified as priors that are easy to criticize and modify,
+		\item verifiable prior feasibility before data collection via prior predictive checks
+		\item built-in regularization
+		\item built-in structure for selecting relevant features,
+		\item posterior distribution as rich information structure from which to estimate parameter uncertainty, output predictin uncertainty, and likelihood of model performance on out-of-sample data,
+		\item assessment of predictive ability via posterior predictive checks,
+		\item multiple model development, which avoids overemphasis on any particular formulation,
+		\item evaluation/comparison between models using information theory
+	\end{itemize}
+
+Because the usefullness of bayesian modeling relies on the reproducibility of the models and their results, the interested reader can obtain the model code from our github repository [here] and the data from the Open Science Framework (OSF) page associated with this projet, [here].
 			
+\newpage			
 %----------------- END INTRODUCTION --------------------------
 
 \section{Methods}
@@ -89,6 +96,14 @@
 	\subsection{Prior Predictive Checks}
 	
 	\subsection{Data Acquisition/Exploration/Transformation}
+	    \subsubsection{Data exploration and transformation}
+	        \begin{itemize}
+	            \item
+	        \end{itemize}
+		\subsubsection{Basis reduction via PCA}
+		    \begin{itemize}
+			    \item PCA of Rrs to reduce overlap of information between predictor variables
+		    \end{itemize}
 	
 	\subsection{Model Fitting}
 	
