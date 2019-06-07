@@ -1,0 +1,23 @@
+digraph {
+	"hyp_β_μ" [label="hyp_β_μ ~ Normal"]
+	"hyp_α_μ" [label="hyp_α_μ ~ Normal"]
+	"hyp_β_σ" [label="hyp_β_σ ~ HalfCauchy"]
+	"hyp_α_σ" [label="hyp_α_σ ~ HalfCauchy"]
+	"\sigma" [label="\sigma ~ Exponential"]
+	subgraph cluster3 {
+		"α" [label="α ~ Normal"]
+		"β" [label="β ~ Normal"]
+		label=3 labeljust=r labelloc=b style=rounded
+	}
+	subgraph "cluster2,972" {
+		log_chl [label="log_chl ~ Normal" style=filled]
+		label="2,972" labeljust=r labelloc=b style=rounded
+	}
+	"hyp_α_σ" -> "α"
+	"hyp_α_μ" -> "α"
+	"hyp_β_σ" -> "β"
+	"hyp_β_μ" -> "β"
+	"α" -> log_chl
+	"\sigma" -> log_chl
+	"β" -> log_chl
+}
