@@ -8,8 +8,8 @@ digraph {
 		"β1" [label="β1 ~ Normal"]
 		"β2" [label="β2 ~ Normal"]
 		"α" [label="α ~ Normal"]
+		"β0" [label="β0 ~ Normal"]
 		"β3" [label="β3 ~ Normal"]
-		"β4" [label="β4 ~ Normal"]
 		label=3 labeljust=r labelloc=b style=rounded
 	}
 	subgraph "cluster2,972" {
@@ -18,18 +18,18 @@ digraph {
 	}
 	"hyp_α_σ" -> "α"
 	"hyp_α_μ" -> "α"
+	"hyp_β_μ" -> "β0"
+	"hyp_β_σ" -> "β0"
 	"hyp_β_μ" -> "β1"
 	"hyp_β_σ" -> "β1"
 	"hyp_β_μ" -> "β2"
 	"hyp_β_σ" -> "β2"
 	"hyp_β_μ" -> "β3"
 	"hyp_β_σ" -> "β3"
-	"hyp_β_μ" -> "β4"
-	"hyp_β_σ" -> "β4"
 	"β1" -> log_chl
 	"β2" -> log_chl
 	"α" -> log_chl
 	"σ" -> log_chl
+	"β0" -> log_chl
 	"β3" -> log_chl
-	"β4" -> log_chl
 }
