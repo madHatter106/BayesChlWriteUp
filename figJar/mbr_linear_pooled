@@ -1,0 +1,12 @@
+digraph {
+	"α" [label="α ~ Normal"]
+	"σ" [label="σ ~ Exponential"]
+	"β" [label="β ~ Normal"]
+	subgraph "cluster2,972" {
+		likelihood [label="likelihood ~ Normal" style=filled]
+		label="2,972" labeljust=r labelloc=b style=rounded
+	}
+	"β" -> likelihood
+	"σ" -> likelihood
+	"α" -> likelihood
+}

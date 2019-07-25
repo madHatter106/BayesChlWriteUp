@@ -10,3 +10,7 @@ BayesOC4\.toc
 \.ipynb_checkpoints/
 
 pickleJar/
+
+*.nc
+
+paperrefs/
