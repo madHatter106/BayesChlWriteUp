@@ -1,0 +1,20 @@
+digraph {
+	subgraph "cluster841 x 6" {
+		pca_data [label="pca_data ~ Deterministic" shape=box style=filled]
+		label="841 x 6" labeljust=r labelloc=b style=rounded
+	}
+	"σ" [label="σ ~ Exponential"]
+	"α" [label="α ~ Normal"]
+	subgraph cluster6 {
+		"β" [label="β ~ Normal"]
+		label=6 labeljust=r labelloc=b style=rounded
+	}
+	subgraph cluster841 {
+		likelihood [label="likelihood ~ Normal" style=filled]
+		label=841 labeljust=r labelloc=b style=rounded
+	}
+	"σ" -> likelihood
+	pca_data -> likelihood
+	"α" -> likelihood
+	"β" -> likelihood
+}
