@@ -13,8 +13,8 @@ digraph {
 		likelihood [label="likelihood ~ Normal" style=filled]
 		label=841 labeljust=r labelloc=b style=rounded
 	}
-	"σ" -> likelihood
 	pca_data -> likelihood
-	"α" -> likelihood
 	"β" -> likelihood
+	"α" -> likelihood
+	"σ" -> likelihood
 }
