@@ -1,7 +1,6 @@
 name: bayes_chl
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - python=3.7.3
   - scikit-learn=0.21.3
