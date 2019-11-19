@@ -1,14 +1,14 @@
 digraph {
 	subgraph cluster841 {
-		likelihood [label="likelihood ~ Normal" style=filled]
 		data [label="data ~ Deterministic" shape=box style=filled]
+		likelihood [label="likelihood ~ Normal" style=filled]
 		label=841 labeljust=r labelloc=b style=rounded
 	}
 	"β" [label="β ~ Normal"]
 	"σ" [label="σ ~ Exponential"]
 	"α" [label="α ~ Normal"]
-	data -> likelihood
 	"β" -> likelihood
-	"α" -> likelihood
+	data -> likelihood
 	"σ" -> likelihood
+	"α" -> likelihood
 }
