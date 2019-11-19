@@ -1,0 +1,11 @@
+name: bayes_chl
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7.3
+  - scikit-learn=0.21.3
+  - numpy=1.17.3
+  - pandas=0.25.0
+  - pymc3=3.7
+  - arviz=0.5.1
