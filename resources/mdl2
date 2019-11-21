@@ -1,12 +1,12 @@
 digraph {
-	"hyper_β_μ" [label="hyper_β_μ ~ Normal"]
-	"σ" [label="σ ~ Exponential"]
 	"hyper_α_μ" [label="hyper_α_μ ~ Normal"]
-	"hyper_β_σ" [label="hyper_β_σ ~ HalfCauchy"]
+	"σ" [label="σ ~ Exponential"]
+	"hyper_β_μ" [label="hyper_β_μ ~ Normal"]
 	"hyper_α_σ" [label="hyper_α_σ ~ HalfCauchy"]
+	"hyper_β_σ" [label="hyper_β_σ ~ HalfCauchy"]
 	subgraph cluster3 {
-		"β" [label="β ~ Normal"]
 		"α" [label="α ~ Normal"]
+		"β" [label="β ~ Normal"]
 		label=3 labeljust=r labelloc=b style=rounded
 	}
 	subgraph cluster841 {
@@ -15,9 +15,9 @@ digraph {
 	}
 	"hyper_β_μ" -> "β"
 	"hyper_β_σ" -> "β"
-	"hyper_α_σ" -> "α"
 	"hyper_α_μ" -> "α"
-	"β" -> likelihood
+	"hyper_α_σ" -> "α"
 	"α" -> likelihood
 	"σ" -> likelihood
+	"β" -> likelihood
 }
