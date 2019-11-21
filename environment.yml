@@ -11,4 +11,6 @@ dependencies:
   - mkl-service
   - python-graphviz=0.10.1
   - pyarrow=0.15.1
+  - jupyter
+  - nb_conda
   - jupyter_contrib_nbextensions=0.5.1
