@@ -1,5 +1,7 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/madHatter106/BayesChlWriteUp/master?filepath=Step-3-1-Modeling-1.ipynb)
 
+[![DOI](https://www.zenodo.org/badge/148692289.svg)](https://www.zenodo.org/badge/latestdoi/148692289)
+
 <h1><center>Bayesian Chlorophyll Project</center></h1>
 
  
